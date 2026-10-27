@@ -1,446 +1,317 @@
-// ─── Nile POS Landing Page — All Content ──────────────────────────
-// Single source of truth for every string on the page.
-// Edit here, never in JSX.
+// ─── Nile POS Landing — All Content ───────────────────
 
 export const SITE = {
   name: "Nile POS",
-  tagline: "Billing, sorted.",
+  tagline: "Bill fast. Keep stock. Stay GST ready.",
   description:
-    "GST invoicing, inventory, and purchasing in one place. From ₹0.",
+    "A billing counter that works even when internet is down. Built for shop owners and factory founders across Tamil Nadu and India.",
   url: "https://nilepos.in",
-  cta: { primary: "Start Free", secondary: "Book a Demo" },
-  announcement: "Free for solo shops. Book a demo →",
-  port: 3001,
+  cta: {
+    primary: "Book a Free Demo",
+    secondary: "See Pricing",
+    demo: "Book a 30-minute demo",
+  },
+  phone: "+91 98765 43210",
+  whatsapp: "919876543210",
+  email: "hello@nilepos.in",
+  address: "Chennai / Coimbatore, Tamil Nadu, India",
+  gstin: "33AAAAA0000A1Z5",
 };
 
 export const NAV_LINKS = [
-  {
-    label: "Features",
-    href: "#features",
-    children: [
-      { label: "POS Billing", href: "#billing-flow", icon: "receipt" },
-      { label: "Inventory", href: "#feature-inventory", icon: "package" },
-      { label: "Purchases", href: "#feature-purchases", icon: "truck" },
-      { label: "GST Compliance", href: "#gst", icon: "shield" },
-      { label: "Reports", href: "#reports-gallery", icon: "chart" },
-      { label: "Multi-outlet", href: "#feature-multioutlet", icon: "store" },
-    ],
-  },
-  { label: "Industries", href: "#industries" },
+  { label: "Product", href: "#features" },
+  { label: "Integrations", href: "#integrations" },
+  { label: "Offline", href: "#offline" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Resources", href: "#faq" },
+  { label: "Contact", href: "#contact" },
 ];
 
-export const HERO_STATS = [
-  { value: "15+", label: "Report types" },
-  { value: "5", label: "Document types" },
-  { value: "∞", label: "Unlimited outlets" },
-];
-
-export const TRUST_LOGOS = [
-  { name: "Partner 1", placeholder: true },
-  { name: "Partner 2", placeholder: true },
-  { name: "Partner 3", placeholder: true },
-  { name: "Partner 4", placeholder: true },
-  { name: "Partner 5", placeholder: true },
-  { name: "Partner 6", placeholder: true },
-];
-
-export const PRODUCT_TABS = [
-  {
-    id: "pos",
-    label: "POS Billing",
-    headline: "8-second bills.",
-    description:
-      "Scan, add, pay, print. Split tender, held tickets, floor maps, and KOT — all in one screen.",
-    features: [
-      "Barcode scanner support",
-      "Split tender payments",
-      "Thermal receipt printing",
-      "Held tickets & recall",
-      "Floor map & table management",
-      "KOT kitchen routing",
-      "Shift management & Z-reports",
-      "Offline mode with sync",
-    ],
-  },
-  {
-    id: "inventory",
-    label: "Inventory",
-    headline: "Stock, always current.",
-    description:
-      "Real-time stock across every outlet. Batch tracking, barcodes, expiry dates, and inter-outlet transfers.",
-    features: [
-      "Real-time per-outlet stock",
-      "Batch & expiry tracking",
-      "Serial number tracking",
-      "Inter-outlet transfers",
-      "Barcode generation",
-      "Price lists & customer groups",
-      "Repack rules",
-      "Product variants",
-    ],
-  },
-  {
-    id: "purchases",
-    label: "Purchases",
-    headline: "PO to payment, covered.",
-    description:
-      "The full purchase cycle: orders, receives, bills, payments, returns, and vendor credits.",
-    features: [
-      "Purchase orders",
-      "Partial & full receives",
-      "Vendor bills & payments",
-      "Purchase returns",
-      "Vendor credits",
-      "Vendor management",
-    ],
-  },
-  {
-    id: "accounting",
-    label: "Accounting",
-    headline: "Books that balance.",
-    description:
-      "Customer payments, vendor payments, receivables — all automatically reconciled. Zoho Books sync included.",
-    features: [
-      "Customer payment receipts",
-      "Vendor payment tracking",
-      "Multi-invoice apply",
-      "Zoho Books journal sync",
-      "Accounting CSV export",
-      "Receivables tracking",
-    ],
-  },
-  {
-    id: "reports",
-    label: "Reports",
-    headline: "Every number, one click.",
-    description:
-      "15+ reports: sales analytics, inventory valuation, aging, movement, receivables, purchases, and audit trail.",
-    features: [
-      "Sales analytics & breakdown",
-      "Inventory valuation",
-      "Inventory aging & movement",
-      "Receivables report",
-      "Purchase reports",
-      "Activity audit trail",
-      "Scheduled email reports",
-      "Shift Z-reports",
-    ],
-  },
-];
-
-export const BILLING_STEPS = [
-  {
-    step: 1,
-    title: "Scan",
-    description: "Barcode scanned, item added instantly.",
-    icon: "scan",
-  },
-  {
-    step: 2,
-    title: "Line added",
-    description: "Quantity, customisations, notes — all inline.",
-    icon: "plus",
-  },
-  {
-    step: 3,
-    title: "Tax auto-applied",
-    description: "CGST + SGST or IGST computed per line by place of supply.",
-    icon: "calculator",
-  },
-  {
-    step: 4,
-    title: "Payment",
-    description: "Cash, UPI, card — or split across methods.",
-    icon: "wallet",
-  },
-  {
-    step: 5,
-    title: "Print",
-    description: "Thermal receipt printed. Cash drawer opens.",
-    icon: "printer",
-  },
-];
-
-export const FEATURES_DEEP = [
-  {
-    id: "invoicing",
-    eyebrow: "01 · Tax Compliance",
-    headline: "GST, handled.",
-    description:
-      "CGST, SGST, IGST — computed per line, split by place of supply. HSN/SAC codes, tax exemptions, and e-way bills built in.",
-    points: [
-      "Per-line GST computation",
-      "Interstate IGST detection",
-      "HSN/SAC codes",
-      "E-way bill generation",
-      "Tax exemptions",
-      "GSTIN management",
-    ],
-  },
-  {
-    id: "inventory",
-    eyebrow: "02 · Inventory",
-    headline: "Stock that counts itself.",
-    description:
-      "Real-time across every outlet. Batch tracking, barcodes, expiry dates, serial numbers, and repack rules.",
-    points: [
-      "Multi-outlet real-time stock",
-      "Batch & serial tracking",
-      "Expiry date management",
-      "Barcode generation",
-      "Inter-outlet transfers",
-      "Repack rules (1kg → 10×100g)",
-    ],
-  },
-  {
-    id: "purchases",
-    eyebrow: "03 · Purchasing",
-    headline: "Buy to bill to credit.",
-    description:
-      "Purchase orders, vendor bills, receives, returns, vendor credits — the full cycle.",
-    points: [
-      "Purchase orders",
-      "Partial/full receives",
-      "Vendor bills",
-      "Vendor payments",
-      "Purchase returns",
-      "Vendor credits",
-    ],
-  },
-  {
-    id: "payments",
-    eyebrow: "04 · Payments",
-    headline: "Money in. Money out.",
-    description:
-      "Customer payments against invoices. Vendor payments against bills. Always reconciled.",
-    points: [
-      "Multi-invoice payment application",
-      "Customer payment receipts",
-      "Vendor payment tracking",
-      "Unpaid invoice/bill lists",
-      "Payment terms & due dates",
-      "Zoho Books sync",
-    ],
-  },
-  {
-    id: "reports",
-    eyebrow: "05 · Reports",
-    headline: "Fifteen reports. Zero guesswork.",
-    description:
-      "Sales, inventory valuation, aging, movement, receivables, purchases, audit trail — all in one place.",
-    points: [
-      "Sales analytics & breakdown",
-      "Inventory valuation & aging",
-      "Inventory movement",
-      "Receivables report",
-      "Purchase reports",
-      "Audit trail with entity tracking",
-    ],
-  },
-  {
-    id: "multioutlet",
-    eyebrow: "06 · Multi-outlet",
-    headline: "Every outlet. One dashboard.",
-    description:
-      "Inter-outlet transfers, outlet-scoped stock, staff assignments, per-outlet billing.",
-    points: [
-      "Unlimited outlets",
-      "Outlet-scoped inventory",
-      "Inter-outlet transfers",
-      "Staff assignment per outlet",
-      "Location map view",
-      "Per-outlet billing profiles",
-    ],
-  },
-];
-
-export const DIFFERENTIATORS = [
-  {
-    title: "Offline Desktop POS",
-    description: "Bills go through even when the internet doesn't. Syncs when you're back.",
-    icon: "wifi-off",
-  },
-  {
-    title: "Multi-outlet + Transfers",
-    description: "Real-time stock across locations. Transfer between outlets with approval flows.",
-    icon: "building",
-  },
-  {
-    title: "Product Variants",
-    description: "Size, colour, weight — tracked per variant with unique SKU and barcode.",
-    icon: "layers",
-  },
-  {
-    title: "Full Purchase Cycle",
-    description: "PO → Receive → Bill → Payment → Return → Vendor Credit. End to end.",
-    icon: "refresh",
-  },
-  {
-    title: "Roles & Audit Trail",
-    description: "Cashier to admin with capability-based access. Every action logged.",
-    icon: "shield",
-  },
-  {
-    title: "Zoho Books Sync",
-    description: "Journal entries synced to Zoho Books automatically. Your CA will love it.",
-    icon: "link",
-  },
-  {
-    title: "Partner API",
-    description: "API keys, rate limiting, scoped access. Build on top of Nile POS.",
-    icon: "code",
-  },
-];
-
-export const COMPARISON = {
-  headers: ["Feature", "Nile POS", "Typical Cloud Billing", "Legacy Desktop"],
-  rows: [
-    ["POS Billing", true, true, false],
-    ["Inventory Management", true, "Basic", true],
-    ["Full Purchase Cycle", true, false, "Partial"],
-    ["Vendor Credits", true, false, false],
-    ["Multi-outlet + Transfers", true, false, false],
-    ["Offline Mode", true, false, true],
-    ["Barcode Scanning", true, true, "Partial"],
-    ["GST Compliance", true, true, true],
-    ["Role-based Access", true, "Partial", false],
-    ["API Access", true, "Partial", false],
+export const TRUST = {
+  line: "Used by shops, distributors, and factories across Tamil Nadu and India.",
+  logos: [
+    "Metro Retail",
+    "Coastal Distributors",
+    "GreenLeaf Pharmacy",
+    "Urban Kitchen",
+    "Apex Hardware",
+    "Silk Route Apparel",
+    "Nova Electronics",
+    "Summit Wholesale",
   ],
 };
 
-export const GST_TABS = [
+export const STATS: {
+  value: number;
+  suffix: string;
+  label: string;
+  prefix: string;
+  decimals?: number;
+}[] = [
+  { value: 12, suffix: "M+", label: "Bills made", prefix: "" },
+  { value: 480, suffix: "Cr+", label: "Money handled", prefix: "₹" },
+  { value: 99.9, suffix: "%", label: "System uptime", prefix: "", decimals: 1 },
+  { value: 2000, suffix: "+", label: "Businesses", prefix: "" },
+];
+
+export const BENTO_FEATURES = [
   {
-    id: "rates",
-    label: "GST Rates & HSN",
-    content:
-      "Configure custom GST rates, map HSN/SAC codes per item, and toggle tax-inclusive or exclusive pricing. Nile POS computes CGST, SGST, IGST, and Cess automatically on every line item.",
+    id: "gst",
+    title: "GST on every bill",
+    description:
+      "Tax calculates itself. CGST, SGST, IGST. HSN codes. E-way bill when you need it. Your CA gets clean numbers.",
+    span: "lg:col-span-2",
+    snippet: "gst",
   },
   {
-    id: "pos",
-    label: "Place of Supply",
-    content:
-      "Interstate transactions automatically apply IGST instead of CGST+SGST. Place-of-supply logic is built into every sales order and invoice.",
+    id: "billing",
+    title: "Counter billing that is fast",
+    description:
+      "Scan barcode. Add item. Take UPI or cash. Print receipt. Your staff learns it in one morning.",
+    span: "",
+    snippet: "billing",
   },
   {
-    id: "eway",
-    label: "E-Way Bills",
-    content:
-      "Generate e-way bills directly from sales invoices. Part A and Part B details, vehicle number, transporter ID — all captured in one flow.",
+    id: "branch",
+    title: "Many shops, one view",
+    description:
+      "See every outlet from one screen. Move stock between shops. Give each staff the right access.",
+    span: "",
+    snippet: "branch",
   },
   {
-    id: "gstin",
-    label: "GSTIN Management",
-    content:
-      "Store and validate GSTINs for your business and your customers. Automatic state code extraction for interstate detection.",
+    id: "reports",
+    title: "Reports that make sense",
+    description:
+      "Today’s sales. What is pending. What is overdue. Numbers you can trust before you talk to your CA.",
+    span: "",
+    snippet: "reports",
+  },
+  {
+    id: "rbac",
+    title: "Staff roles, not shared passwords",
+    description:
+      "Cashier bills. Manager discounts. Owner sees everything. Every action is saved.",
+    span: "lg:col-span-2",
+    snippet: "rbac",
   },
 ];
 
-export const REPORTS_GALLERY = [
+export const INTEGRATIONS = {
+  eyebrow: "Works with what you already use",
+  headline: "Keep your inventory. Use Nile for billing.",
+  description:
+    "You do not have to move stock into Nile. Run the Nile POS counter for fast billing. Connect it to Zoho Books, Zoho Inventory, or the stock system you already trust.",
+  points: [
+    {
+      title: "Zoho Books",
+      description: "Sales and journals reach your books. Your CA stays happy.",
+      icon: "BookOpen",
+    },
+    {
+      title: "Zoho Inventory",
+      description: "Stock lives in Zoho. Nile bills from it at the counter.",
+      icon: "Boxes",
+    },
+    {
+      title: "Your own inventory system",
+      description: "API and sync options so Nile becomes the billing front desk—not a forced stock move.",
+      icon: "Cable",
+    },
+    {
+      title: "Tally / Excel start",
+      description: "Bring products and customers once. Keep billing on Nile while stock stays where you want.",
+      icon: "FileSpreadsheet",
+    },
+  ],
+};
+
+export const OFFLINE = {
+  eyebrow: "No internet? Still bill.",
+  headline: "The counter keeps working. The shop does not wait for Wi‑Fi.",
+  description:
+    "Nile runs on a small computer at your shop. Bills are made right there—even with zero network. When the line comes back, sales sync to your office and integrations.",
+  points: [
+    {
+      title: "Zero network needed to sell",
+      description:
+        "Power on. Open Nile. Bill customers. Internet can be off. The counter still works.",
+    },
+    {
+      title: "Runs on a small shop PC",
+      description:
+        "Not a heavy server. A normal desktop or mini PC at the counter is enough. Low power. Low fuss.",
+    },
+    {
+      title: "Syncs when the line returns",
+      description:
+        "Sales wait safely on the machine. When Wi‑Fi or mobile data is back, everything updates on its own.",
+    },
+  ],
+};
+
+export const HOW_IT_WORKS = {
+  eyebrow: "How it works",
+  headline: "Start in a few days. Not months.",
+  steps: [
+    {
+      step: 1,
+      title: "Bring your list",
+      description: "Products and customers from Excel or Tally. Keep your bill numbers.",
+      mock: "import",
+    },
+    {
+      step: 2,
+      title: "Set GST once",
+      description: "GSTIN, tax rates, and your shop details. Done.",
+      mock: "setup",
+    },
+    {
+      step: 3,
+      title: "Connect stock if you want",
+      description: "Use Nile stock—or keep Zoho / your system and only bill on Nile.",
+      mock: "train",
+    },
+    {
+      step: 4,
+      title: "Bill at the counter",
+      description: "Scan, pay, print. Works offline. Syncs later.",
+      mock: "bill",
+    },
+  ],
+};
+
+export const BUILT_FOR_INDIA = [
   {
-    category: "Transaction",
-    reports: [
-      { name: "Sales Report", description: "Revenue by period, item, category, outlet" },
-      { name: "Purchase Report", description: "Purchase orders, bills, and payments summary" },
-      { name: "Payments Report", description: "All customer and vendor payments with reconciliation" },
-      { name: "Receivables", description: "Outstanding customer balances and aging" },
-    ],
+    title: "GST ready",
+    description: "Tax on every line. Place of supply. HSN. E-way when needed.",
+    icon: "Receipt",
   },
   {
-    category: "Inventory",
-    reports: [
-      { name: "Inventory Valuation", description: "Current stock value across all outlets" },
-      { name: "Inventory Aging", description: "Stock age analysis for expiry management" },
-      { name: "Inventory Movement", description: "In/out flow of stock over time" },
-    ],
+    title: "From Tally / Excel",
+    description: "Move your lists once. Keep going from the same bill number.",
+    icon: "ArrowRightLeft",
   },
   {
-    category: "Activity",
-    reports: [
-      { name: "Audit Trail", description: "Every action logged with user, entity, and timestamp" },
-      { name: "Saved Reports", description: "Save custom report configurations for quick access" },
-      { name: "Scheduled Reports", description: "Automated email delivery on a cron schedule" },
-    ],
+    title: "UPI at the counter",
+    description: "UPI, cash, card—or split on one bill.",
+    icon: "Smartphone",
   },
   {
-    category: "POS",
-    reports: [
-      { name: "Z-Report", description: "Shift-end summary: sales, payments, cash movements" },
-      { name: "Sales Analytics", description: "Real-time charts of orders, revenue, and trends" },
-    ],
+    title: "Data in India",
+    description: "Your business data stays in Indian data centres.",
+    icon: "Server",
+  },
+  {
+    title: "Tamil Nadu first",
+    description: "Support that understands local shops, factories, and GST practice.",
+    icon: "Languages",
+  },
+  {
+    title: "WhatsApp help",
+    description: "Message a person when something breaks. Fast reply.",
+    icon: "MessageCircle",
   },
 ];
 
-export const INDUSTRIES = [
-  { name: "Retail", description: "Multi-outlet retail with barcode billing, stock tracking, and customer loyalty." },
-  { name: "Wholesale", description: "Bulk pricing, purchase cycles, vendor credits, and inter-warehouse transfers." },
-  { name: "Distribution", description: "Purchase orders, delivery challans, e-way bills, and rider management." },
-  { name: "Restaurant", description: "Table management, KOT routing, floor maps, and dine-in/takeaway/delivery." },
-  { name: "Pharmacy", description: "Batch tracking, expiry management, serial numbers, and GST compliance." },
-  { name: "Hardware", description: "Product variants, barcode generation, and multi-outlet inventory." },
-  { name: "Apparel", description: "Size/colour variants, barcode per SKU, and price list management." },
-  { name: "Mobile & Electronics", description: "Serial number tracking, warranty management, and IMEI records." },
-];
-
-export const EVERYWHERE = [
-  { title: "Desktop App", description: "Electron-based POS for Windows, Mac, and Linux.", icon: "monitor" },
-  { title: "Web Dashboard", description: "Admin dashboard accessible from any browser.", icon: "globe" },
-  { title: "Offline Mode", description: "Queue sales offline. Auto-sync when back online.", icon: "wifi-off" },
-  { title: "Real-time Sync", description: "SSE-powered live updates across all terminals.", icon: "zap" },
-  { title: "Multi-user", description: "Role-based access for your entire team.", icon: "users" },
-];
-
-export const METRICS = [
-  { value: "15+", label: "Report Types", note: "" },
-  { value: "5", label: "Document Types", note: "SO · Invoice · Credit Note · Challan · E-Way Bill" },
-  { value: "40+", label: "POS Features", note: "" },
-  { value: "100%", label: "GST Compliant", note: "" },
+export const SECURITY = [
+  {
+    title: "Safe data",
+    description: "Encrypted while moving and while stored.",
+    icon: "Lock",
+  },
+  {
+    title: "Daily backups",
+    description: "Copies saved every day so you do not lose the books.",
+    icon: "HardDrive",
+  },
+  {
+    title: "Staff permissions",
+    description: "Control who can discount, refund, or export.",
+    icon: "KeyRound",
+  },
+  {
+    title: "99.9% uptime",
+    description: "Enterprise plans include a written uptime promise.",
+    icon: "Activity",
+  },
 ];
 
 export const TESTIMONIALS = [
   {
-    quote: "We moved from Tally to Nile POS and our billing time went from minutes to seconds. The POS is incredibly fast.",
-    author: "Retail Store Owner",
-    business: "Multi-outlet retail chain",
-    placeholder: true,
+    quote:
+      "Internet went off during rush. We still billed. Later everything came into Zoho. No lost sales.",
+    author: "Murugan R.",
+    role: "Owner",
+    company: "Murugan Hardwares",
+    city: "Madurai",
+    initials: "MR",
   },
   {
-    quote: "The purchase cycle — from PO to vendor credit — is something I've never seen in a billing app this affordable.",
-    author: "Wholesale Distributor",
-    business: "FMCG distribution",
-    placeholder: true,
+    quote:
+      "We kept Zoho for stock. Nile is only the billing counter. Staff learned it the same day.",
+    author: "Lakshmi V.",
+    role: "Partner",
+    company: "Sri Devi Distributors",
+    city: "Coimbatore",
+    initials: "LV",
   },
   {
-    quote: "Table management and KOT routing made our kitchen chaos disappear. And it works offline during peak hours.",
-    author: "Restaurant Owner",
-    business: "Quick-service restaurant",
-    placeholder: true,
+    quote:
+      "GST numbers are ready when the CA asks. No weekend Excel work.",
+    author: "Suresh K.",
+    role: "Founder",
+    company: "Kaveri Traders",
+    city: "Tiruppur",
+    initials: "SK",
   },
 ];
 
-export const ONBOARDING_STEPS = [
-  { step: 1, title: "Data Import", description: "Import your products, customers, and vendors via CSV." },
-  { step: 2, title: "Invoice Setup", description: "Configure your invoice template, GST details, and number series." },
-  { step: 3, title: "Staff Training", description: "Set up roles, assign staff to outlets, and run a test bill." },
-  { step: 4, title: "Go Live", description: "Start billing. We're a call away if you need help." },
+export const INDUSTRIES = [
+  {
+    name: "Retail shops",
+    description: "Barcode billing. Fast counter. Many outlets if you grow.",
+    icon: "Store",
+  },
+  {
+    name: "Wholesale & distribution",
+    description: "Bulk rates. Purchase bills. E-way for movement.",
+    icon: "Truck",
+  },
+  {
+    name: "Manufacturing",
+    description: "Bill finished goods. Keep stock in your system or Nile.",
+    icon: "Factory",
+  },
+  {
+    name: "Pharmacy",
+    description: "Batch and expiry friendly flow. GST that accountants trust.",
+    icon: "Pill",
+  },
+  {
+    name: "Textiles & apparel",
+    description: "Variants, barcodes, and multi-shop stock views.",
+    icon: "Package",
+  },
+  {
+    name: "Restaurants & QSR",
+    description: "Fast tickets. Kitchen print. Works when Wi‑Fi drops.",
+    icon: "UtensilsCrossed",
+  },
 ];
 
 export const PRICING = {
-  toggle: { monthly: "Monthly", yearly: "Yearly" },
+  note: "All prices in ₹. GST extra.",
   plans: [
     {
       name: "Free",
-      price: { monthly: "₹0", yearly: "₹0" },
+      price: "₹0",
       period: "forever",
-      description: "For solo shops getting started.",
+      description: "One shop. Start simple.",
       features: [
         "1 outlet",
         "1 user",
         "POS billing",
-        "Inventory management",
-        "GST invoicing",
-        "Thermal printing",
+        "GST invoices",
         "Basic reports",
       ],
       cta: "Start Free",
@@ -448,17 +319,14 @@ export const PRICING = {
     },
     {
       name: "Pro",
-      price: { monthly: "₹999", yearly: "₹799" },
+      price: "₹999",
       period: "/outlet/month",
-      description: "For growing businesses.",
+      description: "For growing shops.",
       features: [
         "Unlimited outlets",
         "Unlimited users",
-        "All POS features",
-        "Full purchase cycle",
-        "Advanced reports",
-        "Scheduled reports",
-        "Zoho Books sync",
+        "Integrations (Zoho & more)",
+        "Offline counter",
         "Role-based access",
         "Priority support",
       ],
@@ -466,106 +334,83 @@ export const PRICING = {
       highlighted: true,
     },
     {
-      name: "Enterprise",
-      price: { monthly: "Custom", yearly: "Custom" },
-      period: "",
-      description: "For chains and franchises.",
+      name: "Business",
+      price: "₹2,499",
+      period: "/outlet/month",
+      description: "For bigger teams.",
       features: [
         "Everything in Pro",
-        "Partner API access",
-        "Custom integrations",
-        "Dedicated account manager",
-        "SLA guarantee",
-        "On-site training",
+        "Scheduled reports",
+        "API access",
+        "Onboarding help",
+        "WhatsApp priority",
       ],
-      cta: "Contact Sales",
+      cta: "Talk to Sales",
       highlighted: false,
     },
   ],
+  enterprise: {
+    name: "Enterprise",
+    description:
+      "Custom setup, training at your place, and connections to the systems you already run.",
+    cta: "Contact Sales",
+  },
 };
 
 export const FAQS = [
   {
-    question: "Is Nile POS really free?",
-    answer: "Yes. The Free plan includes 1 outlet, 1 user, POS billing, inventory, GST invoicing, and basic reports. No credit card required.",
+    question: "Do I need to move my stock into Nile?",
+    answer:
+      "No. Many customers keep Zoho Inventory or another stock system and use Nile only as the billing counter. Nile can connect and sync.",
   },
   {
-    question: "Does it work offline?",
-    answer: "Yes. The desktop POS app queues sales locally when offline and syncs automatically when the internet is restored.",
+    question: "Does it work without internet?",
+    answer:
+      "Yes. The counter software runs on a PC in your shop. You can bill with zero network. When internet returns, sales sync automatically.",
   },
   {
-    question: "What about GST compliance?",
-    answer: "Nile POS handles CGST, SGST, IGST, and Cess computation per line item. HSN/SAC codes, place-of-supply logic, tax exemptions, GSTIN management, and e-way bill generation are all built in.",
+    question: "Is GST included?",
+    answer:
+      "Yes. CGST, SGST, IGST, HSN, and e-way support. E-invoice (IRP) is on the roadmap.",
   },
   {
-    question: "Can I manage multiple outlets?",
-    answer: "Yes. Create unlimited outlets, assign staff, track inventory per location, and transfer stock between outlets with approval flows.",
+    question: "Can my staff learn it easily?",
+    answer:
+      "Yes. Most cashiers learn the main flow in one morning—scan, pay, print.",
   },
   {
-    question: "Does it support barcode scanning?",
-    answer: "Yes. Any USB or Bluetooth barcode scanner that works as a keyboard input device (HID) is supported. You can also generate and print barcode labels from within the app.",
-  },
-  {
-    question: "What printers are supported?",
-    answer: "Thermal receipt printers (58mm/80mm) via USB, network TCP, or serial port. ESC/POS commands for receipt printing and cash drawer control.",
-  },
-  {
-    question: "Can I import my existing data?",
-    answer: "Yes. Products, customers, and vendors can be imported via CSV. Transaction number series can be configured to continue from your existing sequence.",
-  },
-  {
-    question: "Is there a mobile app?",
-    answer: "The admin dashboard is accessible from any mobile browser. The POS billing app is a desktop application optimized for counter use with barcode scanners and receipt printers.",
-  },
-  {
-    question: "What integrations are available?",
-    answer: "Zoho Books for accounting journal sync, WhatsApp Cloud API for order notifications, MSG91 for SMS, and a Partner API for custom integrations.",
-  },
-  {
-    question: "How is my data secured?",
-    answer: "Role-based access control with capability-level permissions. Complete audit trail of every action. API keys with rate limiting and scoped access for Partner API.",
-  },
-  {
-    question: "Can I manage recipes and BOMs?",
-    answer: "Yes. Create recipes with bill-of-materials for finished goods. Raw material consumption is tracked automatically when the finished product is sold.",
-  },
-  {
-    question: "Do you support e-invoicing?",
-    answer: "E-invoicing (NIC/IRP portal integration) is on our roadmap but not yet available. GST tax computation, HSN codes, and e-way bills are fully shipped.",
+    question: "Do you support Tamil Nadu businesses?",
+    answer:
+      "Yes. We work with shops and factories across Tamil Nadu. WhatsApp support when you need a person.",
   },
 ];
 
 export const FOOTER = {
   product: [
-    { label: "POS Billing", href: "#billing-flow" },
-    { label: "Inventory", href: "#feature-inventory" },
-    { label: "Purchases", href: "#feature-purchases" },
-    { label: "Reports", href: "#reports-gallery" },
-    { label: "GST Compliance", href: "#gst" },
+    { label: "Features", href: "#features" },
+    { label: "Integrations", href: "#integrations" },
+    { label: "Offline counter", href: "#offline" },
+    { label: "Pricing", href: "#pricing" },
   ],
   solutions: [
     { label: "Retail", href: "#industries" },
-    { label: "Restaurant", href: "#industries" },
     { label: "Wholesale", href: "#industries" },
+    { label: "Manufacturing", href: "#industries" },
     { label: "Pharmacy", href: "#industries" },
-    { label: "Distribution", href: "#industries" },
-  ],
-  resources: [
-    { label: "Invoice Formats", href: "#" },
-    { label: "Purchase Order Templates", href: "#" },
-    { label: "Credit Note Formats", href: "#" },
-    { label: "GST Guide", href: "#" },
-    { label: "FAQ", href: "#faq" },
   ],
   company: [
-    { label: "About", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Contact", href: "#demo" },
+    { label: "Customers", href: "#customers" },
+    { label: "Contact", href: "#contact" },
+    { label: "Book a demo", href: "#contact" },
   ],
   legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Refund Policy", href: "#" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Refund Policy", href: "/refund" },
+  ],
+  social: [
+    { label: "LinkedIn", href: "https://linkedin.com" },
+    { label: "X", href: "https://x.com" },
+    { label: "YouTube", href: "https://youtube.com" },
   ],
 };

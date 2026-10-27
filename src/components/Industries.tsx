@@ -1,52 +1,61 @@
 "use client";
 
-import { useState } from "react";
+import {
+  Factory,
+  Package,
+  Pill,
+  Store,
+  Truck,
+  UtensilsCrossed,
+  type LucideIcon,
+} from "lucide-react";
 import { INDUSTRIES } from "@/content/site";
-import { RevealSection } from "./RevealSection";
+import { Reveal, Stagger, StaggerItem } from "./Reveal";
+import { SpotlightCard } from "./SpotlightCard";
+
+const ICONS: Record<string, LucideIcon> = {
+  Factory,
+  Truck,
+  Store,
+  Package,
+  Pill,
+  UtensilsCrossed,
+};
 
 export function Industries() {
-  const [active, setActive] = useState(0);
-
   return (
-    <RevealSection className="section-padding" id="industries">
+    <section id="industries" className="section-padding border-b border-border">
       <div className="container-landing">
-        <div className="text-center mb-12">
-          <p className="eyebrow mb-4">Industries</p>
-          <h2 className="section-headline mb-4">Built for your business.</h2>
-          <p className="text-body text-muted max-w-xl mx-auto">
-            Whether you run a single shop or a multi-outlet chain — Nile POS adapts to your industry.
-          </p>
-        </div>
+        <Reveal className="max-w-2xl mb-12">
+          <p className="eyebrow mb-3">Industries</p>
+          <h2 className="section-headline mb-4">
+            One system across the industries you serve.
+          </h2>
+        </Reveal>
 
-        {/* Chips */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
-          {INDUSTRIES.map((ind, i) => (
-            <button
-              key={ind.name}
-              onClick={() => setActive(i)}
-              className={`px-5 py-2.5 rounded-pill text-sm font-medium transition-all duration-300 ${
-                active === i
-                  ? "bg-accent text-white shadow-lg shadow-accent/20 scale-105"
-                  : "bg-surface-elevated text-muted hover:text-fg hover:bg-border/30"
-              }`}
-            >
-              {ind.name}
-            </button>
-          ))}
-        </div>
-
-        {/* Description */}
-        <div className="max-w-2xl mx-auto text-center" key={active}>
-          <div className="glass-card p-8 rounded-2xl animate-fade-in">
-            <h3 className="text-xl font-display font-semibold text-fg mb-3">
-              {INDUSTRIES[active].name}
-            </h3>
-            <p className="text-body text-muted leading-relaxed">
-              {INDUSTRIES[active].description}
-            </p>
-          </div>
-        </div>
+        <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {INDUSTRIES.map((ind) => {
+            const Icon = ICONS[ind.icon] || Store;
+            return (
+              <StaggerItem key={ind.name}>
+                <SpotlightCard className="h-full p-5 sm:p-6">
+                  <div className="relative z-[1]">
+                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                      <Icon size={18} strokeWidth={1.75} />
+                    </div>
+                    <h3 className="text-sm font-semibold text-fg mb-1.5">
+                      {ind.name}
+                    </h3>
+                    <p className="text-sm text-muted leading-relaxed">
+                      {ind.description}
+                    </p>
+                  </div>
+                </SpotlightCard>
+              </StaggerItem>
+            );
+          })}
+        </Stagger>
       </div>
-    </RevealSection>
+    </section>
   );
 }

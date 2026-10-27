@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { SITE } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: `${SITE.name} — ${SITE.tagline}`,
+  title: `${SITE.name} — GST Billing for Tamil Nadu & Indian SMEs`,
   description: SITE.description,
   keywords: [
-    "POS",
-    "billing software",
+    "GST billing software",
+    "POS for Tamil Nadu",
+    "offline billing software",
+    "Zoho inventory POS integration",
+    "billing software India",
     "GST invoicing",
-    "inventory management",
-    "purchase management",
-    "retail software",
-    "India billing",
-    "barcode billing",
-    "multi-outlet POS",
-    "desktop POS",
+    "Tally alternative",
+    "shop billing software",
+    "Coimbatore POS",
+    "Chennai billing software",
   ],
   openGraph: {
     title: `${SITE.name} — ${SITE.tagline}`,
@@ -42,10 +44,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-bg text-fg font-body antialiased">
-        {children}
-      </body>
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+    >
+      <body className="bg-bg text-fg font-sans antialiased">{children}</body>
     </html>
   );
 }

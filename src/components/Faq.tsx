@@ -1,74 +1,60 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { FAQS } from "@/content/site";
-import { RevealSection } from "./RevealSection";
-import { Icon } from "./Icon";
+import { Reveal } from "./Reveal";
 
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <RevealSection className="section-padding bg-surface-elevated" id="faq">
-      <div className="container-landing">
-        <div className="text-center mb-12">
-          <p className="eyebrow mb-4">FAQ</p>
-          <h2 className="section-headline mb-4">Questions, answered.</h2>
-        </div>
+    <section id="faq" className="section-padding border-b border-border">
+      <div className="container-landing max-w-3xl">
+        <Reveal className="mb-10 text-center">
+          <p className="eyebrow mb-3">FAQ</p>
+          <h2 className="section-headline">Questions, answered.</h2>
+        </Reveal>
 
-        <div className="max-w-3xl mx-auto space-y-3">
-          {FAQS.map((faq, i) => (
-            <div
-              key={i}
-              className="glass-card overflow-hidden transition-all duration-300"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between p-5 text-left hover:bg-surface-elevated/50 transition-colors"
-              >
-                <span className="text-sm font-medium text-fg pr-4">
-                  {faq.question}
-                </span>
-                <span
-                  className={`shrink-0 text-muted transition-transform duration-300 ${
-                    openIndex === i ? "rotate-180" : ""
-                  }`}
-                >
-                  <Icon name="chevronDown" size={18} />
-                </span>
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-500 ease-smooth ${
-                  openIndex === i ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="px-5 pb-5 text-sm text-muted leading-relaxed border-t border-border/20 pt-4">
-                  {faq.answer}
+        <Reveal delay={0.08}>
+          <div className="divide-y divide-border border border-border rounded-card overflow-hidden">
+            {FAQS.map((faq, i) => {
+              const isOpen = open === i;
+              return (
+                <div key={faq.question} className="bg-surface">
+                  <button
+                    type="button"
+                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                  >
+                    <span className="text-sm font-medium text-fg">
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      size={16}
+                      className={`shrink-0 text-muted transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="px-5 pb-4 text-sm text-muted leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              );
+            })}
+          </div>
+        </Reveal>
       </div>
-
-      {/* FAQPage JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: FAQS.map((faq) => ({
-              "@type": "Question",
-              name: faq.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.answer,
-              },
-            })),
-          }),
-        }}
-      />
-    </RevealSection>
+    </section>
   );
 }
